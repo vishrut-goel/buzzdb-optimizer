@@ -50,18 +50,6 @@ db.scanTableToBuildIndex();
 db.executeOptimizedQuery();
 ```
 
-## Planned Features
-### 100% Goal
-
-- Histogram-based selectivity estimation
-- Hash join implementation
-- Sort-merge join implementation
-- 125% Goal
-
-### Query plan caching
-- Query rewrite rules
-- Multi-query optimization
-
 ## Testing
 The implementation includes basic performance metrics:
 - Query execution time measurement
