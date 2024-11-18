@@ -8,19 +8,22 @@ A cost-based query optimizer implementation for BuzzDB, focusing on improving qu
     ├── optimzer.cpp                # Query optimizer implementation
     └── README.md
 
-## Current Features (75% Implementation)
+## Current Features
 
 - **Basic cost-based query optimization**
-  - Table statistics collection
-  - Simple selectivity estimation
-  - Cost-based scan plan selection
+    - Tracks number of rows and unique values
+    - Helps estimate query result sizes
+    - Used in cost-based optimization decisions
 
-### Core Components
+- **EquiWidth Histogramn**
+    - Analyzes data distribution
+    - Improves range query performance
+    - Makes better join operation decisions
 
-- Table statistics tracking (tuple counts, distinct values)
-- Basic cost model for operations
-- Query plan generation framework
-- Integration with BuzzDB's query execution pipeline
+- **Query Plan Cache with LRU**
+    - Remembers successful query plans
+    - Reduces repeated optimization work
+    - Uses LRU strategy to manage cache size
 
 ## Build & Run
 
@@ -65,12 +68,12 @@ The implementation includes basic performance metrics:
 - Statistics gathering validation
 - Basic plan cost estimation verification
 
-## Known Limitations
-- Currently supports basic scan operations
-- Simple selectivity estimation model
-- Limited join optimization
+## Current Limitations
+- Join operations are partially implemented
+- Simple selectivity model for some operations
+- Basic plan caching system that can be enhanced
 
 ## Contact
 Vishrut Goel
 
-Last updated: October 31, 2024
+Last updated: November 17, 2024
